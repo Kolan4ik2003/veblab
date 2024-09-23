@@ -1,9 +1,9 @@
 /* Общие стили для страницы */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lobster', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color:  #f5f5dc; /* Пастельный фон */
     color: #333;
 }
 
@@ -59,37 +59,61 @@ nav ul li a {
 
 /* Стили для каталога */
 
-
-section h2 {
-    text-align: center;
+/* Центрирование заголовка */
+h2 {
+    text-align: center; /* Центрируем заголовок */
     font-size: 28px;
     margin-top: 20px;
 }
 
+/* Контейнер для карточек каталога */
+.catalog {
+    display: flex; /* Flexbox для выравнивания карточек */
+    justify-content: flex-start; /* Выравнивание карточек по началу строки */
+    gap: 20px; /* Расстояние между карточками */
+    margin: 20px auto; /* Центрирование всего каталога на странице */
+    max-width: 100%; /* Ограничение ширины каталога */
+    padding-left: 20px; /* Отступ слева, чтобы первая карточка не прилипала к краю */
+    overflow-x: auto; /* Горизонтальная прокрутка, если карточки не помещаются */
+    flex-wrap: nowrap; /* Одна строка, карточки не переносятся */
+    scrollbar-width: thin; /* Тонкий скроллбар */
+}
+
+/* Стиль для карточек */
 article {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 700px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Увеличена тень */
+    padding: 30px; /* Увеличены внутренние отступы */
+    width: 350px; /* Увеличена ширина карточек */
+    min-width: 350px; /* Минимальная ширина для карточек, чтобы они не сжимались */
     text-align: center;
+    flex: 0 0 auto; /* Чтобы карточки не сжимались и оставались с фиксированной шириной */
 }
 
+/* Стили для заголовков карточек */
 article h3 {
     margin-top: 0;
+    font-size: 20px; /* Увеличен размер заголовка карточки */
 }
 
+/* Изображение в карточке */
 article img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Изображение заполняет всю ширину карточки */
+    height: 220px; /* Увеличена высота изображения */
+    object-fit: cover; /* Масштабирование изображения по карточке, сохраняя пропорции */
     border-radius: 8px;
 }
 
+/* Текст в карточке */
 article p {
     font-size: 16px;
     color: #555;
+    margin-top: 10px; /* Добавлен отступ сверху для текста */
 }
+
+
+
 
 /* Стили для подвала (футера) */
 footer {
@@ -152,7 +176,7 @@ section a {
 }
 
 section a:hover {
-    color: rgb(0, 255, 102); /* Цвет текста при наведении */
+    color: #ffc0cb; /* Цвет текста при наведении */
 }
 
 
@@ -163,7 +187,7 @@ section a:hover {
 
 
 
-
+/* Стили для страницы авторизации*/
 .auth-container {
     display: flex;
     flex-direction: column;
@@ -239,76 +263,130 @@ button[type="submit"]:hover {
 
 
 
-.flower-description {
-    margin-top: 20px;
-    text-align: left; /* Выровнять текст влево */
-}
-
-.flower-description h3 {
-    margin-top: 15px;
-    color: #ff69b4;
-}
-
-.care-tips {
-    list-style-type: disc;
-    padding-left: 20px; /* Отступ для списка */
-    margin-top: 5px; /* Отступ сверху для списка */
-}
 
 
-
+/* Основная карточка */
 .flower-details {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    justify-content: flex-start; /* Выравнивание по верхней части карточки */
+    width: 100%; /* Занять всю ширину страницы */
+    max-width: 900px; /* Ограничение максимальной ширины карточки */
+    margin: 20px auto; /* Центрирование карточки */
+    padding: 40px; /* Увеличенные внутренние отступы */
+    background: linear-gradient(135deg, #fff0f6, #e6ccf3); /* Градиентный фон */
+    border-radius: 20px; /* Более округлые углы */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Более глубокая тень */
 }
 
 .flower-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+    width: 100%; /* Заполнение всей ширины карточки */
+    height: auto; /* Автоматическая высота */
+    max-height: 400px; /* Ограничение максимальной высоты изображения */
+    border-radius: 20px; /* Округленные углы изображения */
+    margin-bottom: 30px; /* Отступ снизу для изображения */
+    border: 4px solid #ff69b4; /* Рамка вокруг изображения */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Легкая тень */
 }
 
+.flower-description {
+    text-align: center; /* Центрируем текст в описании */
+    padding: 20px; /* Внутренние отступы */
+}
+
+.flower-description h3 {
+    margin-top: 20px;
+    color: #ff69b4; /* Цвет заголовков */
+    font-size: 30px; /* Размер шрифта заголовков */
+}
+
+.flower-description p {
+    margin: 10px 0; /* Отступы для абзацев */
+    line-height: 1.8; /* Междустрочный интервал для лучшей читаемости */
+    font-size: 18px; /* Увеличенный размер шрифта */
+}
 
 .flower-description ul {
     list-style-type: disc;
-    padding-left: 20px;
-    text-align: left;
+    padding-left: 20px; /* Отступ для списка */
+    text-align: left; /* Выровнять текст влево */
+    margin-top: 10px; /* Отступ сверху для списка */
+    font-size: 18px; /* Увеличенный размер шрифта списка */
 }
 
 .price {
-    font-size: 24px;
+    font-size: 40px; /* Увеличенный размер шрифта цены */
     font-weight: bold;
-    color: #ff69b4;
+    color: #ff69b4; /* Цвет для цены */
     text-align: center;
-    margin: 10px 0;
+    margin: 20px 0; /* Увеличенные отступы */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Тень для текста */
 }
 
+/* Стили для кнопки */
 .add-to-cart {
-    background-color: #ff69b4;
+    background-color: #ff69b4; /* Цвет кнопки */
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 10px; /* Более округлые углы кнопки */
+    padding: 15px 30px; /* Увеличенные размеры кнопки */
+    font-size: 20px; /* Увеличенный размер шрифта кнопки */
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s; /* Эффекты при наведении */
+    margin-top: 20px; /* Отступ сверху для кнопки */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень */
 }
 
 .add-to-cart:hover {
-    background-color: #ff85c0;
+    background-color: #ff85c0; /* Цвет при наведении */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+.care-tips-title {
+    text-align: left; /* Выровнять текст влево */
+    font-size: 20px; /* Размер шрифта для заголовка */
+    margin-top: 20px; /* Отступ сверху */
+    font-weight: bold; /* Жирный текст */
 }
 
-body,button {
-    font-family: 'Lobster', sans-serif; 
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5dc;
-    color: #333;
+
+
+
+
+/* Поисковая строка */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-input {
+    font-family: 'Lobster', cursive;
+    padding: 10px;
+    width: 300px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #ff4081;
+}
+
+.search-button {
+    font-family: 'Lobster', cursive;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #e91e63;
 }
